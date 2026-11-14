@@ -2,15 +2,23 @@
 
 基于六套参考配色，为具体网站选择颜色、定义语义变量、生成可复制提示词，并核对视觉层级与可读性。
 
-## 安装
+## 安装到 Codex
 
-在 Windows PowerShell 中执行（首次安装）：
+在终端执行：
+
+```bash
+npx --yes skills add strive7781/vibecoding-color --skill vibecoding-color-direction -g -a codex -y
+```
+
+此命令从本仓库安装指定 Skill 到用户级 Codex 技能目录。也可先用 `npx --yes skills add strive7781/vibecoding-color --list` 只查看可安装的技能。
+
+如果希望用 Git 管理更新，在 Windows PowerShell 中手动克隆：
 
 ```powershell
 git clone https://github.com/strive7781/vibecoding-color.git "$env:USERPROFILE\.codex\skills\vibecoding-color-direction"
 ```
 
-更新已安装的 Skill：
+更新通过 Git 克隆的 Skill：
 
 ```powershell
 git -C "$env:USERPROFILE\.codex\skills\vibecoding-color-direction" pull --ff-only
