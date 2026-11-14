@@ -1,27 +1,29 @@
-# Vibecoding 网站配色 Skill
+# Vibecoding 网页 UI 设计 Skill
 
-基于六套参考配色，为具体网站选择颜色、定义语义变量、生成可复制提示词，并核对视觉层级与可读性。
+面向不同类型网页的通用 UI 设计与前端实施 Skill。根据产品目标和真实内容决定信息结构、版式、排版、配色、组件及响应式方案；六套配色仅是可选参考，不预设业务按钮。
 
-## 安装到 AI 编程工具
+## 安装
 
-本仓库采用通用的 `SKILL.md` 格式，适用于支持 [Agent Skills](https://agentskills.io) 的编程助手。`skills` CLI 会根据目标工具放置技能文件。
-
-在当前 AI 编程工具的终端安装，或由 CLI 自动检测本机工具：
+在系统终端运行交互式安装命令，按提示选择 AI 编程工具和安装范围：
 
 ```bash
-npx --yes skills add strive7781/vibecoding-color --skill vibecoding-color-direction -g -y
+npx --yes skills add strive7781/vibecoding-color
 ```
 
-安装到 `skills` CLI 支持的全部 AI 编程工具：
+若要在当前电脑的所有受支持工具中安装：
 
 ```bash
-npx --yes skills add strive7781/vibecoding-color --all -g
+npx --yes skills add strive7781/vibecoding-color --all -g --copy
 ```
 
-`--all` 会为 CLI 支持的所有代理创建安装项，包括当前没有运行的工具。若只需指定几个工具，可重复使用 `-a`，例如 `-a codex -a claude-code -a cursor`。可先用 `npx --yes skills add strive7781/vibecoding-color --list` 只查看仓库中的技能。支持范围以 [Skills CLI 的代理列表](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)为准；不能加载 Skill 的工具可直接使用 [提示词模板](references/prompt-template.md)。
+安装后，按工具自身的方式调用 `vibecoding-ui-design`，或直接描述网页设计任务。支持的工具以 [Skills CLI 列表](https://github.com/vercel-labs/skills/blob/main/docs/agents.md) 为准。需要单独粘贴提示词时，使用 [通用提示词模板](references/prompt-template.md)。
 
-安装后，在支持 Skill 的编程助手中提出网站配色需求，或明确指定 `vibecoding-color-direction`。Skill 入口是 [SKILL.md](SKILL.md)，配色表和提示词模板在 `references/`。
+若此前安装过旧版 `vibecoding-color-direction`，先在原安装范围卸载旧名称，再安装新版；例如全局安装可运行 `npx --yes skills remove vibecoding-color-direction -g -y`。
 
-## 来源
+## 内容
 
-配色及基础方法整理自[《HiHi小壮｜Vibecoding网站高级感配色技巧》](https://tcnp23cimv5i.feishu.cn/wiki/VirIwMNz1i6IoVkSEZxcjhZ1nlh)。本 Skill 增加了实施规则与基于 [WCAG 2.2](https://www.w3.org/TR/WCAG22/) 的可读性检查。
+- [SKILL.md](SKILL.md)：通用网页 UI 设计与实施流程。
+- [通用提示词模板](references/prompt-template.md)：按项目事实填写，无固定页面或按钮文案。
+- [六套参考配色](references/palettes.md)：仅在用户指定或适合项目时采用。
+
+配色案例整理自[《HiHi小壮｜Vibecoding网站高级感配色技巧》](https://tcnp23cimv5i.feishu.cn/wiki/VirIwMNz1i6IoVkSEZxcjhZ1nlh)；通用页面设计流程是基于这些视觉原则扩展的实施指导。
